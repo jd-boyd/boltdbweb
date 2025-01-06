@@ -4,7 +4,7 @@ A simple web based boltdb GUI Admin panel.
 
 ##### Installation
 ```
-go get github.com/evnix/boltdbweb
+go get github.com/jdboyd/boltdbweb
 ```
 
 ##### Usage
