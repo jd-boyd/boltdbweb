@@ -15,14 +15,14 @@ import (
 	"path"
 	"time"
 
-	"github.com/evnix/boltdbweb/web"
+	"github.com/jdboyd/boltdbweb/web"
 	"github.com/gin-gonic/gin"
 
 	log "github.com/sirupsen/logrus"
-	"github.com/boltdb/bolt"
+	bolt "go.etcd.io/bbolt"
 )
 
-const version = "v0.0.0"
+const version = "v0.0.1"
 
 var (
 	showHelp   bool
