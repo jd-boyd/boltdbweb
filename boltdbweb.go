@@ -14,11 +14,12 @@ import (
 	"os"
 	"path"
 	"time"
+	"log"
+	"log/slog"
 
-	"github.com/jdboyd/boltdbweb/web"
+	"github.com/jd-boyd/boltdbweb/web"
 	"github.com/gin-gonic/gin"
 
-	log "github.com/sirupsen/logrus"
 	bolt "go.etcd.io/bbolt"
 )
 
@@ -82,7 +83,7 @@ func main() {
 	}
 
 	fmt.Print(" ")
-	log.Info("starting boltdb-browser..")
+	slog.Info("starting boltdb-browser..")
 
 	var err error
 	db, err = bolt.Open(dbName, 0600, &bolt.Options{Timeout: 2 * time.Second})
