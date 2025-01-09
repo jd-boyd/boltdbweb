@@ -5,9 +5,22 @@ import (
 	"fmt"
 	bolt "go.etcd.io/bbolt"	
 	"github.com/gin-gonic/gin"
+	"embed"
+		"net/http"
+
 )
 
+//go:embed css/*
+//go:embed fonts/*
+//go:embed html/*
+//go:embed js/*
+var static embed.FS
+
 var Db *bolt.DB
+
+func AssetFS() http.FileSystem {
+	return http.FS(static) //embed.FS
+}
 
 func Index(c *gin.Context) {
 

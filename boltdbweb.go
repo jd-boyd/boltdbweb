@@ -6,8 +6,6 @@
 //
 package main
 
-//go:generate go-bindata-assetfs -o web_static.go web/...
-
 import (
 	"flag"
 	"fmt"
@@ -112,7 +110,7 @@ func main() {
 	r.POST("/deleteBucket", boltbrowserweb.DeleteBucket)
 	r.POST("/prefixScan", boltbrowserweb.PrefixScan)
 
-	r.StaticFS("/web", assetFS())
+	r.StaticFS("/web", boltbrowserweb.AssetFS())
 
 	r.Run(":" + port)
 }
